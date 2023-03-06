@@ -1,0 +1,13 @@
+Mode = area stim
+    verts = 4 
+    radius = 550 
+    center = (600, 960) 
+    first_angle = 1.620762572888587 
+    wm_size = [1200 1920] 
+    stim_amp = 6 
+    baseline_stim = 4
+    current_stim_group = audio
+    sense_zone = 0
+    ===============================
+2022-03-16 15:18:35.302090 True [   18892.387094] 0003 0036 0000019d
+2022-03-16 15:18:35.302090 True [   18892.387094] 0003 0035 000002e3

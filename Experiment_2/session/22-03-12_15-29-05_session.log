@@ -1,0 +1,11 @@
+Mode = area stim
+    verts = 5 
+    radius = 550 
+    center = (600, 960) 
+    first_angle = 1.2073315172466106 
+    wm_size = [1200 1920] 
+    stim_amp = 6 
+    baseline_stim = 4
+    current_stim_group = audio
+    sense_zone = 0
+    ===============================
