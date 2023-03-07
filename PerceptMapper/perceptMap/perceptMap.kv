@@ -1,0 +1,1160 @@
+#:kivy 1.0
+#:import kivy kivy
+
+<ImageProperties@CustomImage>
+    keep_data: True
+    nocache: False
+    id: 'image'
+    size: self.texture_size
+
+<LabelCheckBox@LabelCheckResponse>:
+    check_pos: "left"
+    font_size: '25sp'
+    yshift: 25
+    xshift: 0
+    canvas:
+        Clear
+
+        Color:
+            rgb: 1, 1, 1
+
+        Rectangle:
+            texture: self.texture
+            size: self.texture_size
+            pos: int(self.center_x - self.texture_size[0]/5), int(self.center_y - self.texture_size[1] / 2.)
+
+        Rectangle:
+            source: 'atlas://data/images/defaulttheme/checkbox%s%s_%s' % (('_radio' if self.group else ''), ('_disabled' if self.disabled else ''), ('on' if self.active else 'off'))
+            size: sp(50), sp(50)
+            pos: int(self.x - sp(self.xshift)  if self.check_pos == 'left' else self.x + self.width -sp(32)), int(self.center_y - sp(self.yshift))
+
+
+<UserResponse>:
+    id: rootWidget
+    canvas:
+        Color:
+            rgb: 0.3, 0.3, 0.3
+        Rectangle:
+            pos: self.pos
+            size: self.size[0]*0.375, self.size[1]
+
+    ResponseAccordion
+        id: responseAcc
+        size_hint_x: 0.6
+        orientation: 'vertical'
+        #min_space: sp(60)
+        font_size: '20sp'
+
+        AccordionItem:              # font size set in style.kv
+            id: qualityAccordion
+            collapse: False
+            title: "Ощущение"
+            text_size: self.size
+
+            BoxLayout
+                padding: 30, 10
+                orientation: 'vertical'
+                spacing: 30
+
+                BoxLayout
+                    orientation: 'vertical'
+                    Label:
+                        text: 'Интенсивность тактильного ощущения?'
+                        size_hint_y: 0.1
+                        text_size: self.size
+                        halign: "left"
+                        font_size: '20sp'
+                    SliderResponse:
+                        id: maintactileSlider
+                        id2:'maintactileSlider'
+                        halign:"center"
+                        size_hint_y: 0.2
+                        min: 0
+                        max: 10
+                        step: 0.1
+                        value: 0
+                        orientation: 'horizontal'
+
+                    BoxLayout:
+                        size_hint_y: 0.1
+                        orientation: 'horizontal'
+                        Label:
+                            text: ('0     ')
+                            text_size: self.size
+                            valign: "top"
+                            halign: "center"
+                            font_size: '20sp'
+                        Label:
+                            text: ('1   ')
+                            text_size: self.size
+                            valign: "top"
+                            halign: "center"
+                            font_size: '20sp'
+                        Label:
+                            text: ('2   ')
+                            text_size: self.size
+                            valign: "top"
+                            halign: "center"
+                            font_size: '20sp'
+                        Label:
+                            text: ('3   ')
+                            text_size: self.size
+                            valign: "top"
+                            halign: "center"
+                            font_size: '20sp'
+                        Label:
+                            text: (' 4   ')
+                            text_size: self.size
+                            valign: "top"
+                            halign: "center"
+                            font_size: '20sp'
+                        Label:
+                            text: ('   5   ')
+                            text_size: self.size
+                            valign: "top"
+                            halign: "center"
+                            font_size: '20sp'
+                        Label:
+                            text: ('    6   ')
+                            text_size: self.size
+                            valign: "top"
+                            halign: "center"
+                            font_size: '20sp'
+                        Label:
+                            text: ('    7   ')
+                            text_size: self.size
+                            valign: "top"
+                            halign: "center"
+                            font_size: '20sp'
+                        Label:
+                            text: ('      8  ')
+                            text_size: self.size
+                            valign: "top"
+                            halign: "center"
+                            font_size: '20sp'
+                        Label:
+                            text: ('     9  ')
+                            text_size: self.size
+                            valign: "top"
+                            halign: "center"
+                            font_size: '20sp'
+                        Label:
+                            text: '   10'
+                            text_size: self.size
+                            valign: "top"
+                            halign: "center"
+                            font_size: '20sp'
+
+                BoxLayout
+                    orientation: 'vertical'
+                    Label:
+                        text: 'Насколько привычно данное ощущение?'
+                        size_hint_y: 0.15
+                        text_size: self.size
+                        halign: "left"
+                        font_size: '20sp'
+                    SliderResponse:
+                        id: naturalSlider
+                        id2:'naturalSlider'
+                        size_hint_y: 0.25
+                        min: -5
+                        max: 5
+                        step: 0.1
+                        value: 0
+                        orientation: 'horizontal'
+                    
+                    BoxLayout:
+                        size_hint_y: 0.2
+                        orientation: 'horizontal'
+                        Label:
+                            text: ('-5    ')
+                            text_size: self.size
+                            valign: "top"
+                            halign: "center"
+                            font_size: '20sp'
+                        Label:
+                            text: ('-4   ')
+                            text_size: self.size
+                            valign: "top"
+                            halign: "center"
+                            font_size: '20sp'
+                        Label:
+                            text: (' -3   ')
+                            text_size: self.size
+                            valign: "top"
+                            halign: "center"
+                            font_size: '20sp'
+                        Label:
+                            text: ('  -2   ')
+                            text_size: self.size
+                            valign: "top"
+                            halign: "center"
+                            font_size: '20sp'
+                        Label:
+                            text: ('  -1   ')
+                            text_size: self.size
+                            valign: "top"
+                            halign: "center"
+                            font_size: '20sp'
+                        Label:
+                            text: ('   0   ')
+                            text_size: self.size
+                            valign: "top"
+                            halign: "center"
+                            font_size: '20sp'
+                        Label:
+                            text: ('    1   ')
+                            text_size: self.size
+                            valign: "top"
+                            halign: "center"
+                            font_size: '20sp'
+                        Label:
+                            text: ('     2   ')
+                            text_size: self.size
+                            valign: "top"
+                            halign: "center"
+                            font_size: '20sp'
+                        Label:
+                            text: ('      3  ')
+                            text_size: self.size
+                            valign: "top"
+                            halign: "center"
+                            font_size: '20sp'
+                        Label:
+                            text: ('      4    ')
+                            text_size: self.size
+                            valign: "top"
+                            halign: "center"
+                            font_size: '20sp'
+                        Label:
+                            text: '     5'
+                            text_size: self.size
+                            valign: "top"
+                            halign: "center"
+                            font_size: '20sp' 
+                    
+                    BoxLayout:
+                        size_hint_y: 0.2
+                        orientation: 'horizontal'
+                        Label:
+                            text: ('Неестественно')
+                            text_size: self.size
+                            valign: "top"
+                            halign:"left"
+                            font_size: '20sp'
+                        Label:
+                            text: 'Естественно'
+                            text_size: self.size
+                            valign: "top"
+                            halign:"right"
+                            font_size: '20sp'
+
+                BoxLayout
+                    orientation: 'vertical'
+                    Label:
+                        text: 'Насколько заметным было ощущение движениние?'
+                        size_hint_y: 0.15
+                        text_size: self.size
+                        halign: "left"
+                        font_size: '20sp'
+                    SliderResponse:
+                        id: motorSlider
+                        id2:'motorSlider'
+                        size_hint_y: 0.25
+                        min: 0
+                        max: 10
+                        step: 0.1
+                        value: 0
+                        orientation: 'horizontal'
+                        
+                    BoxLayout:
+                        size_hint_y: 0.2
+                        orientation: 'horizontal'
+                        Label:
+                            text: ('0     ')
+                            text_size: self.size
+                            valign: "top"
+                            halign: "center"
+                            font_size: '20sp'
+                        Label:
+                            text: ('1   ')
+                            text_size: self.size
+                            valign: "top"
+                            halign: "center"
+                            font_size: '20sp'
+                        Label:
+                            text: ('2   ')
+                            text_size: self.size
+                            valign: "top"
+                            halign: "center"
+                            font_size: '20sp'
+                        Label:
+                            text: ('3   ')
+                            text_size: self.size
+                            valign: "top"
+                            halign: "center"
+                            font_size: '20sp'
+                        Label:
+                            text: (' 4   ')
+                            text_size: self.size
+                            valign: "top"
+                            halign: "center"
+                            font_size: '20sp'
+                        Label:
+                            text: ('   5   ')
+                            text_size: self.size
+                            valign: "top"
+                            halign: "center"
+                            font_size: '20sp'
+                        Label:
+                            text: ('    6   ')
+                            text_size: self.size
+                            valign: "top"
+                            halign: "center"
+                            font_size: '20sp'
+                        Label:
+                            text: ('    7   ')
+                            text_size: self.size
+                            valign: "top"
+                            halign: "center"
+                            font_size: '20sp'
+                        Label:
+                            text: ('      8  ')
+                            text_size: self.size
+                            valign: "top"
+                            halign: "center"
+                            font_size: '20sp'
+                        Label:
+                            text: ('     9  ')
+                            text_size: self.size
+                            valign: "top"
+                            halign: "center"
+                            font_size: '20sp'
+                        Label:
+                            text: '   10'
+                            text_size: self.size
+                            valign: "top"
+                            halign: "center"
+                            font_size: '20sp'
+                    
+                    BoxLayout:
+                        size_hint_y: 0.2
+                        orientation: 'horizontal'
+                        Label:
+                            text: ('Отсутствовало')
+                            text_size: self.size
+                            valign: "top"
+                            halign:"left"
+                            font_size: '20sp'
+                        Label:
+                            text: ('Присутствовало явно')
+                            text_size: self.size
+                            valign: "top"
+                            halign:"right"
+                            font_size: '20sp'
+
+                BoxLayout:
+                    orientation: 'vertical'
+                    Label:
+                        text: 'Насколько болезненным показалось ощущение?'
+                        size_hint_y: 0.15
+                        text_size: self.size
+                        halign: "left"
+                        font_size: '20sp'
+                    SliderResponse:
+                        id: painSlider
+                        id2: 'painSlider'
+                        size_hint_y: 0.3
+                        min: 0
+                        max: 10
+                        step: 0.1
+                        value: 0
+                        orientation: 'horizontal'
+                        
+                    BoxLayout:
+                        size_hint_y: 0.2
+                        orientation: 'horizontal'
+                        Label:
+                            text: ('0     ')
+                            text_size: self.size
+                            valign: "top"
+                            halign: "center"
+                            font_size: '20sp'
+                        Label:
+                            text: ('1   ')
+                            text_size: self.size
+                            valign: "top"
+                            halign: "center"
+                            font_size: '20sp'
+                        Label:
+                            text: ('2   ')
+                            text_size: self.size
+                            valign: "top"
+                            halign: "center"
+                            font_size: '20sp'
+                        Label:
+                            text: ('3   ')
+                            text_size: self.size
+                            valign: "top"
+                            halign: "center"
+                            font_size: '20sp'
+                        Label:
+                            text: (' 4   ')
+                            text_size: self.size
+                            valign: "top"
+                            halign: "center"
+                            font_size: '20sp'
+                        Label:
+                            text: ('   5   ')
+                            text_size: self.size
+                            valign: "top"
+                            halign: "center"
+                            font_size: '20sp'
+                        Label:
+                            text: ('    6   ')
+                            text_size: self.size
+                            valign: "top"
+                            halign: "center"
+                            font_size: '20sp'
+                        Label:
+                            text: ('    7   ')
+                            text_size: self.size
+                            valign: "top"
+                            halign: "center"
+                            font_size: '20sp'
+                        Label:
+                            text: ('      8  ')
+                            text_size: self.size
+                            valign: "top"
+                            halign: "center"
+                            font_size: '20sp'
+                        Label:
+                            text: ('     9  ')
+                            text_size: self.size
+                            valign: "top"
+                            halign: "center"
+                            font_size: '20sp'
+                        Label:
+                            text: '   10'
+                            text_size: self.size
+                            valign: "top"
+                            halign: "center"
+                            font_size: '20sp'
+
+                BoxLayout
+                    orientation: 'vertical'
+                    Label:
+                        text: 'Как изменилась температура в данной области?'
+                        size_hint_y: 0.15
+                        text_size: self.size
+                        halign: "left"
+                        font_size: '20sp'
+                    SliderResponse:
+                        id: tempSlider
+                        id2: 'tempSlider'
+                        size_hint_y: 0.3
+                        min: -5
+                        max: +5
+                        step: 0.1
+                        value: 0
+                        orientation: 'horizontal'
+                    
+                    BoxLayout:
+                        size_hint_y: 0.2
+                        orientation: 'horizontal'
+                        Label:
+                            text: ('-5    ')
+                            text_size: self.size
+                            valign: "top"
+                            halign: "center"
+                            font_size: '20sp'
+                        Label:
+                            text: ('-4   ')
+                            text_size: self.size
+                            valign: "top"
+                            halign: "center"
+                            font_size: '20sp'
+                        Label:
+                            text: (' -3   ')
+                            text_size: self.size
+                            valign: "top"
+                            halign: "center"
+                            font_size: '20sp'
+                        Label:
+                            text: ('  -2   ')
+                            text_size: self.size
+                            valign: "top"
+                            halign: "center"
+                            font_size: '20sp'
+                        Label:
+                            text: ('  -1   ')
+                            text_size: self.size
+                            valign: "top"
+                            halign: "center"
+                            font_size: '20sp'
+                        Label:
+                            text: ('   0   ')
+                            text_size: self.size
+                            valign: "top"
+                            halign: "center"
+                            font_size: '20sp'
+                        Label:
+                            text: ('    1   ')
+                            text_size: self.size
+                            valign: "top"
+                            halign: "center"
+                            font_size: '20sp'
+                        Label:
+                            text: ('     2   ')
+                            text_size: self.size
+                            valign: "top"
+                            halign: "center"
+                            font_size: '20sp'
+                        Label:
+                            text: ('      3  ')
+                            text_size: self.size
+                            valign: "top"
+                            halign: "center"
+                            font_size: '20sp'
+                        Label:
+                            text: ('      4    ')
+                            text_size: self.size
+                            valign: "top"
+                            halign: "center"
+                            font_size: '20sp'
+                        Label:
+                            text: '     5'
+                            text_size: self.size
+                            valign: "top"
+                            halign: "center"
+                            font_size: '20sp' 
+                    
+                    BoxLayout:
+                        size_hint: 0.95,  0.3
+                        pos_hint:{'x':0.03}
+                        orientation: 'horizontal'
+                        Label:
+                            text: 'Холодно'
+
+                            text_size: self.size
+                            valign: "top"
+                            halign:"left"
+                            font_size: '20sp'
+                        Label:
+                            text: 'Горячо'
+
+                            text_size: self.size
+                            valign: "top"
+                            halign:"right"
+                            font_size: '20sp'
+
+                BoxLayout
+                    orientation: 'vertical'
+                    Label:
+                        text: 'Насколько интенсивна была фантомная боль?'
+                        size_hint_y: 0.15
+                        text_size: self.size
+                        halign: "left"
+                        font_size: '20sp'
+                    SliderResponse:
+                        id: phantomSlider
+                        id2: 'phantomSlider'
+                        size_hint_y: 0.3
+                        min: -5
+                        max: +5
+                        step: 0.1
+                        value: 0
+                        orientation: 'horizontal'
+                        
+                    BoxLayout:
+                        size_hint_y: 0.2
+                        orientation: 'horizontal'
+                        Label:
+                            text: ('-5    ')
+                            text_size: self.size
+                            valign: "top"
+                            halign: "center"
+                            font_size: '20sp'
+                        Label:
+                            text: ('-4   ')
+                            text_size: self.size
+                            valign: "top"
+                            halign: "center"
+                            font_size: '20sp'
+                        Label:
+                            text: (' -3   ')
+                            text_size: self.size
+                            valign: "top"
+                            halign: "center"
+                            font_size: '20sp'
+                        Label:
+                            text: ('  -2   ')
+                            text_size: self.size
+                            valign: "top"
+                            halign: "center"
+                            font_size: '20sp'
+                        Label:
+                            text: ('  -1   ')
+                            text_size: self.size
+                            valign: "top"
+                            halign: "center"
+                            font_size: '20sp'
+                        Label:
+                            text: ('   0   ')
+                            text_size: self.size
+                            valign: "top"
+                            halign: "center"
+                            font_size: '20sp'
+                        Label:
+                            text: ('    1   ')
+                            text_size: self.size
+                            valign: "top"
+                            halign: "center"
+                            font_size: '20sp'
+                        Label:
+                            text: ('     2   ')
+                            text_size: self.size
+                            valign: "top"
+                            halign: "center"
+                            font_size: '20sp'
+                        Label:
+                            text: ('      3  ')
+                            text_size: self.size
+                            valign: "top"
+                            halign: "center"
+                            font_size: '20sp'
+                        Label:
+                            text: ('      4    ')
+                            text_size: self.size
+                            valign: "top"
+                            halign: "center"
+                            font_size: '20sp'
+                        Label:
+                            text: '     5'
+                            text_size: self.size
+                            valign: "top"
+                            halign: "center"
+                            font_size: '20sp'    
+                     
+                    BoxLayout:
+                        size_hint: 0.95,  0.3
+                        pos_hint:{'x':0.03}
+                        orientation: 'horizontal'
+                        Label:
+                            text: 'Отсутствовала'
+                            text_size: self.size
+                            valign: "top"
+                            halign:"left"
+                            font_size: '20sp'
+                        Label:
+                            text: 'Заметно усилилась'
+                            text_size: self.size
+                            valign: "top"
+                            halign:"right"
+                            font_size: '20sp'
+
+        AccordionItem:
+            id: modalityAccordion
+            title: "Дополнительно"
+            collapse: True
+            BoxLayout
+                #spacing: 5
+                orientation: 'vertical'
+                Label:
+                    text: 'Выберите слова, описывающие испытанное ощущение'
+                    size_hint_y: 0.05
+                    font_size: '20sp'
+                BoxLayout:
+                    padding: 25, 10
+                    orientation: 'vertical'
+                    BoxLayout:
+                        orientation: 'horizontal'
+                        LabelCheckBox:
+                            text: 'Вибрация'
+                            id: vibrationBox
+                            check_pos: 'left'
+                            text_size: self.size
+                            halign: "left"
+                            valign: 'middle'
+                            font_size: '20sp'
+                        #SliderResponse:
+                        #    opacity: 0
+                        #    id: vibrationSlider
+                        #    id2:'vibrationSlider'
+                        #    min: 0
+                        #    max: 10
+                        #    step: 0.1
+                        #    value: 0
+                        #    orientation: 'horizontal'
+                        #    disabled: True
+                    BoxLayout:
+                        orientation: 'horizontal'
+                        LabelCheckBox:
+                            text: 'Подергивание'
+                            id: flutterBox
+                            check_pos: 'left'
+                            text_size: self.size
+                            halign: "left"
+                            valign: 'middle'
+                            font_size: '20sp'
+                        #SliderResponse:
+                        #    opacity: 0
+                        #    id: flutterSlider
+                        #    id2:'flutterSlider'
+                        #    min: 0
+                        #    max: 10
+                        #    step: 0.1
+                        #    value: 0
+                        #    orientation: 'horizontal'
+                        #    disabled: True
+                    BoxLayout:
+                        orientation: 'horizontal'
+                        LabelCheckBox:
+                            text: 'Намерение произвести движение'
+                            id: urgeBox
+                            check_pos: 'left'
+                            text_size: self.size
+                            halign: "left"
+                            valign: 'middle'
+                            font_size: '20sp'
+                        #SliderResponse:
+                        #    opacity: 0
+                        #    id: urgeSlider
+                        #    id2:'urgeSlider'
+                        #    min: 0
+                        #    max: 10
+                        #    step: 0.1
+                        #    value: 0
+                        #    orientation: 'horizontal'
+                        #    disabled: True
+                    BoxLayout:
+                        orientation: 'horizontal'
+                        LabelCheckBox:
+                            text: 'Прикосновение'
+                            id: touchBox
+                            check_pos: 'left'
+                            text_size: self.size
+                            halign: "left"
+                            valign: 'middle'
+                            font_size: '20sp'
+                        #SliderResponse:
+                        #    opacity: 0
+                        #    id: touchSlider
+                        #    id2:'touchSlider'
+                        #    min: 0
+                        #    max: 10
+                        #    step: 0.1
+                        #    value: 0
+                        #    orientation: 'horizontal'
+                        #    disabled: True
+                    BoxLayout:
+                        orientation: 'horizontal'
+                        LabelCheckBox:
+                            text: 'Сдавливание'
+                            id: pressureBox
+                            check_pos: 'left'
+                            text_size: self.size
+                            halign: "left"
+                            valign: 'middle'
+                            font_size: '20sp'
+                        #SliderResponse:
+                        #    opacity: 0
+                        #    id: pressureSlider
+                        #    id2:'pressureSlider'
+                        #    min: 0
+                        #    max: 10
+                        #    step: 0.1
+                        #    value: 0
+                        #    orientation: 'horizontal'
+                        #    disabled: True
+                    BoxLayout:
+                        orientation: 'horizontal'
+                        LabelCheckBox:
+                            text: 'Укол'
+                            id: sharpBox
+                            check_pos: 'left'
+                            text_size: self.size
+                            halign: "left"
+                            valign: 'middle'
+                            font_size: '20sp'
+                        #SliderResponse:
+                        #    opacity: 0
+                        #    id: sharpSlider
+                        #    id2:'sharpSlider'
+                        #    min: 0
+                        #    max: 10
+                        #    step: 0.1
+                        #    value: 0
+                        #    orientation: 'horizontal'
+                        #    disabled: True
+                    BoxLayout:
+                        orientation: 'horizontal'
+                        LabelCheckBox:
+                            text: 'Покалывание'
+                            id: prickBox
+                            check_pos: 'left'
+                            text_size: self.size
+                            halign: "left"
+                            valign: 'middle'
+                            font_size: '20sp'
+                        #SliderResponse:
+                        #    opacity: 0
+                        #    id: prickSlider
+                        #    id2:'prickSlider'
+                        #    min: 0
+                        #    max: 10
+                        #    step: 0.1
+                        #    value: 0
+                        #    orientation: 'horizontal'
+                        #    disabled: True
+                    BoxLayout:
+                        orientation: 'horizontal'
+                        LabelCheckBox:
+                            text: 'Электрический ток'
+                            id: currentBox
+                            check_pos: 'left'
+                            text_size: self.size
+                            halign: "left"
+                            valign: 'middle'
+                            font_size: '20sp'
+                        #SliderResponse:
+                        #    opacity: 0
+                        #    id: electricSlider
+                        #    id2:'electricSlider'
+                        #    min: 0
+                        #    max: 10
+                        #    step: 0.1
+                        #    value: 0
+                        #    orientation: 'horizontal'
+                        #    disabled: True
+                    BoxLayout:
+                        orientation: 'horizontal'
+                        LabelCheckBox:
+                            text: 'Удар'
+                            id: shockBox
+                            check_pos: 'left'
+                            text_size: self.size
+                            halign: "left"
+                            valign: 'middle'
+                            font_size: '20sp'
+                        #SliderResponse:
+                        #    opacity: 0
+                        #    id: shockSlider
+                        #    id2:'shockSlider'
+                        #    min: 0
+                        #    max: 10
+                        #    step: 0.1
+                        #    value: 0
+                        #    orientation: 'horizontal'
+                        #    disabled: True
+                    BoxLayout:
+                        orientation: 'horizontal'
+                        LabelCheckBox:
+                            text: 'Пульсация'
+                            id: pulsingBox
+                            check_pos: 'left'
+                            text_size: self.size
+                            halign: "left"
+                            valign: 'middle'
+                            font_size: '20sp'
+                        #SliderResponse:
+                        #    opacity: 0
+                        #    id: pulseSlider
+                        #    id2:'pulseSlider'
+                        #    min: 0
+                        #    max: 10
+                        #    step: 0.1
+                        #    value: 0
+                        #    orientation: 'horizontal'
+                        #    disabled: True
+                    BoxLayout:
+                        orientation: 'horizontal'
+                        LabelCheckBox:
+                            text: 'Щекотка'
+                            id: tickleBox
+                            check_pos: 'left'
+                            text_size: self.size
+                            halign: "left"
+                            valign: 'middle'
+                            font_size: '20sp'
+                        #SliderResponse:
+                        #    opacity: 0
+                        #    id: tickleSlider
+                        #    id2:'tickleSlider'
+                        #    min: 0
+                        #    max: 10
+                        #    step: 0.1
+                        #    value: 0
+                        #    orientation: 'horizontal'
+                        #    disabled: True
+                    BoxLayout:
+                        orientation: 'horizontal'
+                        LabelCheckBox:
+                            text: 'Зуд'
+                            id: itchBox
+                            check_pos: 'left'
+                            text_size: self.size
+                            halign: "left"
+                            valign: 'middle'
+                            font_size: '20sp'
+                        #SliderResponse:
+                        #    opacity: 0
+                        #    id: itchSlider
+                        #    id2:'itchSlider'
+                        #    min: 0
+                        #    max: 10
+                        #    step: 0.1
+                        #    value: 0
+                        #    orientation: 'horizontal'
+                        #    disabled: True
+                    BoxLayout:
+                        orientation: 'horizontal'
+                        LabelCheckBox:
+                            text: 'Пощипывание'
+                            id: tingleBox
+                            check_pos: 'left'
+                            text_size: self.size
+                            halign: "left"
+                            valign: 'middle'
+                            font_size: '20sp'
+                        #SliderResponse:
+                        #    opacity: 0
+                        #    id: tingleSlider
+                        #    id2:'tingleSlider'
+                        #    min: 0
+                        #    max: 10
+                        #    step: 0.1
+                        #    value: 0
+                        #    orientation: 'horizontal'
+                        #    disabled: True
+                    BoxLayout:
+                        orientation: 'horizontal'
+                        LabelCheckBox:
+                            text: 'Онемение'
+                            id: numbBox
+                            check_pos: 'left'
+                            text_size: self.size
+                            halign: "left"
+                            valign: 'middle'
+                            font_size: '20sp'
+                        #SliderResponse:
+                        #    opacity: 0
+                        #    id: numbSlider
+                        #    id2:'numbSlider'
+                        #    min: 0
+                        #    max: 10
+                        #    step: 0.1
+                        #    value: 0
+                        #    orientation: 'horizontal'
+                        #    disabled: True
+                    #BoxLayout:
+                    #    orientation: 'horizontal'
+                    #    LabelCheckBox:
+                    #        text: 'Тепло'
+                    #        id: warmBox
+                    #        check_pos: 'left'
+                    #        text_size: self.size
+                    #        halign: "left"
+                    #        valign: 'middle'
+                    #        font_size: '20sp'
+                    #    SliderResponse:
+                    #        opacity: 0
+                    #        id: warmSlider
+                    #        id2:'warmSlider'
+                    #        min: 0
+                    #        max: 10
+                    #        step: 0.1
+                    #        value: 0
+                    #        orientation: 'horizontal'
+                    #        disabled: True
+                    BoxLayout:
+                        orientation: 'horizontal'
+                        LabelCheckBox:
+                            text: 'Сокращение мышцы'
+                            id: coolBox
+                            check_pos: 'left'
+                            text_size: self.size
+                            halign: "left"
+                            valign: 'middle'
+                            font_size: '20sp'
+                        #SliderResponse:
+                        #     opacity: 0
+                        #     id: coolSlider
+                        #     id2:'coolSlider'
+                        #     min: 0
+                        #     max: 10
+                        #     step: 0.1
+                        #     value: 0
+                        #     orientation: 'horizontal'
+                        #     disabled: True
+
+    FloatStencil:
+        id: floatStencilArea
+        TabbedPanel:
+            id: imageTab
+            pos_hint: {'right': 1, 'y':0}
+            tab_pos:'right_top'
+            background_color: (1, 1, 0, 0)
+            do_default_tab: False
+            tab_height: 120
+            tab_width: 120
+
+            TabbedPanelItem:
+                text:'Правая\nЛадонь'
+                id:tab0
+                background_down: "atlas://data/images/defaulttheme/button_pressed"
+                canvas.before:
+                    PushMatrix
+                    Rotate:
+                        angle: 90
+                        origin: self.center
+                    Rectangle:
+                        size: self.size
+                canvas.after:
+                    PopMatrix
+                font_size: '20sp'
+                ImageProperties:
+                    text:'Правая внутренняя'
+                    id: img0
+                    id2: 'img0'
+                    opacity: 1
+
+            TabbedPanelItem:
+                text:'Прав.Тыл'
+                id:tab1
+                background_down: "atlas://data/images/defaulttheme/button_pressed"
+                canvas.before:
+                    PushMatrix
+                    Rotate:
+                        angle: 90
+                        origin: self.center
+                    Rectangle:
+                        size: self.size
+                canvas.after:
+                    PopMatrix
+                font_size: '20sp'
+                ImageProperties:
+                    id: img1
+                    id2: 'img1'
+                    opacity: 1
+
+            TabbedPanelItem:
+                text:'Руки\nПеред'
+                id:tab2
+                background_down: "atlas://data/images/defaulttheme/button_pressed"
+                canvas.before:
+                    PushMatrix
+                    Rotate:
+                        angle: 90
+                        origin: self.center
+                    Rectangle:
+                        size: self.size
+                canvas.after:
+                    PopMatrix
+                font_size: '20sp'
+                ImageProperties:
+                    id: img2
+                    id2: 'img2'
+                    opacity: 1
+
+            TabbedPanelItem:
+                text:'Руки\nСзади'
+                id:tab3
+                background_down: "atlas://data/images/defaulttheme/button_pressed"
+                canvas.before:
+                    PushMatrix
+                    Rotate:
+                        angle: 90
+                        origin: self.center
+                    Rectangle:
+                        size: self.size
+                canvas.after:
+                    PopMatrix
+                font_size: '20sp'
+                ImageProperties:
+                    id: img3
+                    id2: 'img3'
+                    opacity: 1
+
+            TabbedPanelItem:
+                text:'Левая\nЛадонь'
+                id:tab4
+                background_down: "atlas://data/images/defaulttheme/button_pressed"
+                canvas.before:
+                    PushMatrix
+                    Rotate:
+                        angle: 90
+                        origin: self.center
+                    Rectangle:
+                        size: self.size
+                canvas.after:
+                    PopMatrix
+                font_size: '20sp'
+                ImageProperties:
+                    id: img4
+                    id2: 'img4'
+                    opacity: 1
+
+            TabbedPanelItem:
+                text: 'Лев. Тыл'
+                id:tab5
+                background_down: "atlas://data/images/defaulttheme/button_pressed"
+                canvas.before:
+                    PushMatrix
+                    Rotate:
+                        angle: 90
+                        origin: self.center
+                    Rectangle:
+                        size: self.size
+                canvas.after:
+                    PopMatrix
+                font_size: '20sp'
+                ImageProperties:
+                    id: img5
+                    id2: 'img5'
+                    opacity: 1
+
+        SensationButton:
+            id2: 'clear'
+            text: 'Очистить'
+            pos_hint: {'right': 0.3, 'y':0}
+            size_hint: 0.3,0.08
+            font_size: '25sp'
+            background_color: [1.0, 0.4980392156862745, 0.054901960784313725]
+
+
+
+        # comment if using in auto mode
+        SaveResetButton:
+            id2: 'clear'
+            text: 'Сохранить'
+            pos_hint: {'right': 1, 'y':0}
+            size_hint: 0.3,0.08
+            font_size: '25sp'
+            background_color: [0.17254901960784313, 0.6274509803921569, 0.17254901960784313, 1]
+	  
+	  # Добавлено для перевода в csv
+        CloseButton:
+            id2: 'clear'
+            text: 'Закрыть'
+            pos_hint: {'right': 1, 'y': 0.15}
+            size_hint: 0.2,0.08
+            font_size: '25sp'
+            background_color: [0.17254901960784313, 0.6274509803921569, 0.4, 1]
+
+        RestoreButton:
+            id2: 'restore'
+            text: 'Восстановить'
+            pos_hint: {'right': 0.2, 'y':0.96}
+            size_hint: 0.2, 0.04
+            font_size: '25sp'
+            background_color: [1.0, 0.4980392156862745, 0.054901960784313725]
+
+        FrameLabel: 
+            id: frameLabel
+            id2: 'FrameLabel'
+            text: 'Кадр'
+            pos_hint: {'right': 0.65, 'y':0.0}
+            size_hint: 0.3,0.05
+            font_size: '25sp'
+            background_color: [0,0,0]
