@@ -1,0 +1,60 @@
+1, Mar-13 10_37_43, pulse: 100mcs, freq: 15Hz, duration: 250ms , picture: 0
+2, Mar-13 10_38_27, pulse: 100mcs, freq: 95Hz, duration: 50ms , picture: 1
+3, Skipped Mar-13 10_38_27, pulse: 50mcs, freq: 8Hz, duration: 50ms , picture: no
+4, Mar-13 10_39_04, pulse: 200mcs, freq: 95Hz, duration: 250ms , picture: 2
+5, Skipped Mar-13 10_39_04, pulse: 400mcs, freq: 15Hz, duration: 50ms , picture: no
+6, Mar-13 10_39_34, pulse: 200mcs, freq: 30Hz, duration: 250ms , picture: 3
+7, Mar-13 10_40_08, pulse: 100mcs, freq: 50Hz, duration: 50ms , picture: 4
+8, Mar-13 10_40_21, pulse: 200mcs, freq: 50Hz, duration: 50ms , picture: 5
+9, Mar-13 10_40_47, pulse: 50mcs, freq: 95Hz, duration: 500ms , picture: 6
+10, Mar-13 10_40_56, pulse: 50mcs, freq: 8Hz, duration: 250ms , picture: 7
+11, Mar-13 10_41_06, pulse: 200mcs, freq: 50Hz, duration: 500ms , picture: 8
+12, Mar-13 10_41_48, pulse: 100mcs, freq: 95Hz, duration: 500ms , picture: 9
+13, Skipped Mar-13 10_41_48, pulse: 400mcs, freq: 8Hz, duration: 50ms , picture: no
+14, Mar-13 10_42_13, pulse: 200mcs, freq: 30Hz, duration: 50ms , picture: 10
+15, Mar-13 10_42_37, pulse: 200mcs, freq: 15Hz, duration: 250ms , picture: 11
+16, Mar-13 10_43_00, pulse: 400mcs, freq: 50Hz, duration: 500ms , picture: 12
+17, Skipped Mar-13 10_43_00, pulse: 200mcs, freq: 15Hz, duration: 50ms , picture: no
+18, Mar-13 10_43_36, pulse: 200mcs, freq: 95Hz, duration: 500ms , picture: 13
+19, Mar-13 10_44_08, pulse: 50mcs, freq: 30Hz, duration: 250ms , picture: 14
+20, Mar-13 10_44_18, pulse: 100mcs, freq: 95Hz, duration: 250ms , picture: 15
+21, Mar-13 10_44_51, pulse: 100mcs, freq: 8Hz, duration: 250ms , picture: 16
+22, Mar-13 10_45_08, pulse: 400mcs, freq: 8Hz, duration: 250ms , picture: 17
+23, Mar-13 10_45_33, pulse: 100mcs, freq: 50Hz, duration: 250ms , picture: 18
+24, Mar-13 10_45_53, pulse: 400mcs, freq: 15Hz, duration: 500ms , picture: 19
+25, Skipped Mar-13 10_45_53, pulse: 100mcs, freq: 8Hz, duration: 50ms , picture: no
+26, Mar-13 10_46_35, pulse: 50mcs, freq: 30Hz, duration: 500ms , picture: 20
+27, Mar-13 10_46_45, pulse: 100mcs, freq: 15Hz, duration: 500ms , picture: 21
+28, Mar-13 10_47_06, pulse: 100mcs, freq: 30Hz, duration: 50ms , picture: 22
+29, Mar-13 10_47_33, pulse: 200mcs, freq: 15Hz, duration: 500ms , picture: 23
+30, Skipped Mar-13 10_47_34, pulse: 200mcs, freq: 8Hz, duration: 50ms , picture: no
+31, Mar-13 10_48_07, pulse: 100mcs, freq: 30Hz, duration: 500ms , picture: 24
+32, Mar-13 10_48_20, pulse: 400mcs, freq: 50Hz, duration: 50ms , picture: 25
+33, Mar-13 10_48_48, pulse: 50mcs, freq: 50Hz, duration: 250ms , picture: 26
+34, Mar-13 10_49_01, pulse: 200mcs, freq: 30Hz, duration: 500ms , picture: 27
+35, Mar-13 10_49_28, pulse: 200mcs, freq: 8Hz, duration: 250ms , picture: 28
+36, Mar-13 10_49_48, pulse: 400mcs, freq: 50Hz, duration: 250ms , picture: 29
+37, Mar-13 10_50_22, pulse: 50mcs, freq: 50Hz, duration: 50ms , picture: 30
+38, Mar-13 10_50_31, pulse: 50mcs, freq: 15Hz, duration: 500ms , picture: 31
+39, Mar-13 10_50_40, pulse: 200mcs, freq: 95Hz, duration: 50ms , picture: 32
+40, Mar-13 10_51_05, pulse: 50mcs, freq: 15Hz, duration: 250ms , picture: 33
+41, Skipped Mar-13 10_51_05, pulse: 100mcs, freq: 15Hz, duration: 50ms , picture: no
+42, Mar-13 10_51_15, pulse: 50mcs, freq: 50Hz, duration: 500ms , picture: 34
+43, Mar-13 10_51_24, pulse: 400mcs, freq: 95Hz, duration: 250ms , picture: 35
+44, Mar-13 10_52_04, pulse: 400mcs, freq: 8Hz, duration: 500ms , picture: 36
+45, Mar-13 10_52_26, pulse: 100mcs, freq: 8Hz, duration: 500ms , picture: 37
+46, Mar-13 10_52_39, pulse: 50mcs, freq: 95Hz, duration: 50ms , picture: 38
+47, Mar-13 10_52_50, pulse: 50mcs, freq: 95Hz, duration: 250ms , picture: 39
+48, Mar-13 10_53_17, pulse: 400mcs, freq: 95Hz, duration: 500ms , picture: 40
+49, Mar-13 10_53_52, pulse: 400mcs, freq: 95Hz, duration: 50ms , picture: 41
+50, Mar-13 10_54_19, pulse: 400mcs, freq: 15Hz, duration: 250ms , picture: 42
+51, Mar-13 10_54_39, pulse: 400mcs, freq: 30Hz, duration: 250ms , picture: 43
+52, Mar-13 10_55_21, pulse: 100mcs, freq: 30Hz, duration: 250ms , picture: 44
+53, Mar-13 10_55_33, pulse: 50mcs, freq: 30Hz, duration: 50ms , picture: 45
+54, Mar-13 10_55_42, pulse: 50mcs, freq: 8Hz, duration: 500ms , picture: 46
+55, Mar-13 10_55_53, pulse: 200mcs, freq: 8Hz, duration: 500ms , picture: 47
+56, Mar-13 10_56_16, pulse: 400mcs, freq: 30Hz, duration: 50ms , picture: 48
+57, Mar-13 10_56_42, pulse: 100mcs, freq: 50Hz, duration: 500ms , picture: 49
+58, Mar-13 10_57_52, pulse: 200mcs, freq: 50Hz, duration: 250ms , picture: 50
+59, Skipped Mar-13 10_57_53, pulse: 50mcs, freq: 15Hz, duration: 50ms , picture: no
+60, Mar-13 10_58_16, pulse: 400mcs, freq: 30Hz, duration: 500ms , picture: 51

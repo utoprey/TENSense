@@ -47,7 +47,7 @@ all_data = {'Data num' : [], 'Time' : [], 'coolSlider' : [],
             'urgeSlider' : [], 'vibrationSlider' : []}
 """
 
-# Просто факт ощущния в опциональных
+# Просто факт ощущения в опциональных
 all_data = {'Picture' : [], 'Time' : [],
             'naturalSlider' : [], 'painSlider' : [], 'phantomSlider' : [],
             'motorSlider' : [], 'tempSlider' : [], 'maintactileSlider' : [],
@@ -101,7 +101,8 @@ def add_info(dicti, num):
     for key in temp_dict.keys():
         key_s = list_opt[1][list_opt[0].index(key)]
         all_data[key_s].append(temp_dict[key])
-    
+        temp_dict[key] = False
+        
     if all_data['motorSlider'][-1] == 0 or all_data['maintactileSlider'][-1] == 0:
         all_data['Was Felt'].append(False)
     else:
@@ -197,8 +198,13 @@ class UserResponse(BoxLayout):
                 with open(fname+'_RadioCheckSlider.yml', 'w') as outfile:
                     outfile.write(yaml.dump(radiosliderdict, default_flow_style=False))
                     self.ids['responseAcc'].labelCheckDict.clear()
+                with open(fname+'_Feelings.txt', 'w') as outfile: 
+                    for key, value in temp_dict.items():
+                        key_s = list_opt[1][list_opt[0].index(key)]
+                        outfile.write('%s:%s\n' % (key_s, value))
+
                 # Правки Михаила Кнышенко -- нормальное выделение результатов
-                print(f'radiosliderdict:\n {radiosliderdict["Sensation0"]}\n')
+                print(f'(save_data) radiosliderdict:\n {radiosliderdict["Sensation0"]}\n')
                 add_info(radiosliderdict["Sensation0"], self.repNumber)
                 
                 '''
@@ -206,6 +212,8 @@ class UserResponse(BoxLayout):
                     all_data[key].append(radiosliderdict["Sensation0"][key])
                 all_data['Number'].append(self.repNumber)
                 '''
+            for key in temp_dict.keys():
+                radiosliderdict["Sensation0"][key] = False
 
     def clear_window_canvas(self):
         """Clears all drawn lines on the image canvas"""
@@ -377,10 +385,14 @@ class LabelCheckResponse(CheckBox, Label):
     """
     descriptors = ListProperty()
 
+    # for key in temp_dict.keys():
+    #     temp_dict[key] = False
+
     def __init__(self, **kwargs):
         super(LabelCheckResponse, self).__init__(**kwargs)
         self.descriptors = ["Vibration", "Flutter", "Buzz", "Urge to move", "Touch", "Pressure", "Sharp", "Prick", "Tap",
                             "Electric current", "Shock", "Pulsing", "Tickle", "Itch", "Tingle", "Numb", "Warm", "Cool"]
+        self.active = False
 
     def on_touch_up(self, touch):
         """enables checkbox/radiobutton
@@ -398,8 +410,8 @@ class LabelCheckResponse(CheckBox, Label):
         text = self.text
         act = self.active
         temp_dict[text] = act
-        print(self.text + ' enabled: ' + str(self.active))
-        print(temp_dict)
+        print('active' + self.text + ' enabled: ' + str(self.active))
+        #print(temp_dict[text])
         
         rootwidget = self.get_root_window().children[-1]
 
@@ -444,10 +456,10 @@ class LabelCheckResponse(CheckBox, Label):
         else:  # is inactive
             if not self.group:          # checkbox
                 self.active = False
-                #print(self.text + ' enabled: ' + str(self.active))
-                #text = self.text
-                #act = self.active
-                #temp_dict[text] = act
+                print('inactive' + self.text + ' enabled: ' + str(self.active))
+                text = self.text
+                act = self.active
+                temp_dict[text] = act
                 #print(temp_dict)
                 
                 for responseObj in self.parent.children[:-1]:
@@ -582,6 +594,7 @@ class RestoreButton(Button):
             #default_R346_RadioCheckSlider.yml
             with open(yaml_file_slider, 'r') as stream:
                 data_loaded = yaml.safe_load(stream)['Sensation0']
+                
 
             yaml_file_image = '../data/default/default_R' + str(previous_value) + '_imPixel.yml'
             with open(yaml_file_image, 'r') as stream:
